@@ -158,8 +158,9 @@ if __name__ == '__main__':
     if args.quant_type == 'QAT':
         theta = copy.deepcopy(gamma)
     elif args.quant_type == 'PTQ':
-        for i in range(len(gamma)):
-            theta.append( 1 * math.exp(-1* args.beta *gamma[i]) )
+        # for i in range(len(gamma)):
+        #     theta.append( 1 * math.exp(-1* args.beta *gamma[i]) )
+        theta = copy.deepcopy(gamma)
         theta = np.array(theta)
     # for x in gamma:
     #     print('%.4f '%x)

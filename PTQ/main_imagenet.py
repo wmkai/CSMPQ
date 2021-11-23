@@ -142,6 +142,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', default=64, type=int, help='mini-batch size for data loader')
     parser.add_argument('--workers', default=4, type=int, help='number of workers for data loader')
     parser.add_argument('--data_path', default='', type=str, help='path to ImageNet data', required=True)
+    parser.add_argument('--gpu', help='gpu available', default='0')
 
     # quantization parameters
     parser.add_argument('--n_bits_w', default=4, type=int, help='bitwidth for weight quantization')
@@ -172,6 +173,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu)
     seed_all(args.seed)
     # torch.backends.cudnn.benchmark = True
     # build imagenet data loader
