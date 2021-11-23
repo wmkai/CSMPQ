@@ -55,6 +55,9 @@ def feature_preprocess(feature):
         # pdb.set_trace()
         if len(feature[i].size()) == 4: #卷积层输出
             feature[i] = F.avg_pool2d(feature[i], feature[i].size()[3])  #([10000, 64, 1, 1])
+        else:
+            feature[i] = F.relu(feature[i])
+            feature[i].view([feature[i].size()[0], feature[i].size()[1], 1, 1])
         # fc层输出本来就是二维的，不用变换
         feature[i] = feature[i].view(feature[i].size()[0], -1) #([10000, 64])
         feature[i] = feature[i].transpose(0, 1) #([64, 10000])
@@ -110,9 +113,10 @@ def calc_tf_idf(feature:dict, coe:int, tf_idf_map:dict):   # feature = [c, n] ([
     tf = (feature / feature_sum) * balance_coe #文中公式(8) ([64, 10000]) 
     tf_mean = (tf * (feature >= sample_mean)).sum(dim=1)   # Sa ([64])
     tf_mean /= (feature >= sample_mean).sum(dim=1) # ([64])
-
+    
     idf = torch.log(sample_quant / (sample_inverse + 1.0)) #文中公式(7) ([64])
     idf = idf.cuda() #新增，idf必须和tf_mean都在gpu上
+    
     # pdb.set_trace()
     importance = tf_mean * idf #文中公式(10)  ([64]) 每个输出通道对应一个importance值
     importance = importance.mean().item() #新增

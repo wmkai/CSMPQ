@@ -160,9 +160,11 @@ if __name__ == '__main__':
     elif args.quant_type == 'PTQ':
         for i in range(len(gamma)):
             theta.append( 1 * math.exp(-1* args.beta *gamma[i]) )
-            theta = np.array(theta)
+        theta = np.array(theta)
+    # for x in gamma:
+    #     print('%.4f '%x)
 
-    theta = np.array(tf_idf_map)
+    # theta = np.array(tf_idf_map)
     for x in theta:
         print('%.4f '%x)
     theta = np.negative(theta)
