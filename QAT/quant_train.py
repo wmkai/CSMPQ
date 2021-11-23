@@ -71,6 +71,7 @@ parser.add_argument('--seed', default=None, type=int,
                     help='seed for initializing training. ')
 parser.add_argument('--gpu', default=None, type=int,
                     help='GPU id to use.')
+parser.add_argument('--gpu_id', help='gpu available', default='0,1')
 parser.add_argument('--multiprocessing_distributed', action='store_true',
                     help='Use multi-processing distributed training to launch '
                          'N processes per node, which has N GPUs. This is the '
@@ -192,7 +193,7 @@ def main():
         args.world_size = int(os.environ["WORLD_SIZE"])
 
     args.distributed = args.world_size > 1 or args.multiprocessing_distributed
-    os.environ["CUDA_VISIBLE_DEVICES"] = str('0,1')
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu_id)
     ngpus_per_node = torch.cuda.device_count()
     if args.multiprocessing_distributed:
         # Since we have ngpus_per_node processes per node, the total world_size

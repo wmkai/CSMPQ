@@ -12,4 +12,5 @@ python quant_train.py \
  --pretrained \
  --fix_BN \
  --checkpoint_iter -1 \
+ --gpu_id '0,1' \
  --quant_scheme cdp_modelsize_15.9_a5_143BOP
