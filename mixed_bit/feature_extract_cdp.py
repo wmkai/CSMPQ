@@ -16,6 +16,7 @@ from cdp import calculate_cdp, feature_preprocess
     # get_threshold_by_flops, get_threshold_by_sparsity
     # TFIDFPruner,acculumate_feature
 import pdb
+import copy
 parser = argparse.ArgumentParser()
 
 """ model config """
@@ -55,7 +56,8 @@ if __name__ == '__main__':
     # torch.set_num_threads(cpu_num)
 
     os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu)
-    torch.cuda.set_device(0)
+    torch.cuda.set_device(1)
+    
 
     random.seed(args.manual_seed)
     torch.manual_seed(args.manual_seed)
@@ -151,7 +153,18 @@ if __name__ == '__main__':
     #     theta.append( 1 * math.exp(-1* args.beta *gamma[i]) )
     # theta = np.array(theta)
     # theta = np.negative(theta)
+    gamma = np.array(tf_idf_map)
+
+    if args.quant_type == 'QAT':
+        theta = copy.deepcopy(gamma)
+    elif args.quant_type == 'PTQ':
+        for i in range(len(gamma)):
+            theta.append( 1 * math.exp(-1* args.beta *gamma[i]) )
+            theta = np.array(theta)
+
     theta = np.array(tf_idf_map)
+    for x in theta:
+        print('%.4f '%x)
     theta = np.negative(theta)
     
     # theta = array([0.01322103, 0.01361509, 0.01278478, 0.01267193, 0.00762108, 0.00755147, 0.00914501, 0.00717208, 0.00505306, 0.00479445,
