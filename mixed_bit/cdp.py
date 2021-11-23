@@ -54,6 +54,7 @@ def feature_preprocess(feature):
         # feature[i] = F.relu(feature[i]) #已经在relu后了，所以注释掉
         # pdb.set_trace()
         if len(feature[i].size()) == 4: #卷积层输出
+            feature[i] = F.relu(feature[i]) #新增for mobilenet
             feature[i] = F.avg_pool2d(feature[i], feature[i].size()[3])  #([10000, 64, 1, 1])
         else:
             feature[i] = F.relu(feature[i])
