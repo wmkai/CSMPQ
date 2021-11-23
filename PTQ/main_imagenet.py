@@ -136,7 +136,7 @@ if __name__ == '__main__':
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     # general parameters for data and model
-    parser.add_argument('--seed', default=1, type=int, help='random seed for results reproduction') #1005
+    parser.add_argument('--seed', default=3, type=int, help='random seed for results reproduction') #1005
     parser.add_argument('--arch', default='resnet18', type=str, help='dataset name',
                         choices=['resnet18', 'mobilenetv2'])
     parser.add_argument('--batch_size', default=64, type=int, help='mini-batch size for data loader')
