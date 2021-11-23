@@ -12,5 +12,5 @@ python quant_train.py \
  --pretrained \
  --fix_BN \
  --checkpoint_iter -1 \
- --gpu_id '0,1' \
+ --gpu_id '0' \
  --quant_scheme cdp_modelsize_6.7_a6_63B

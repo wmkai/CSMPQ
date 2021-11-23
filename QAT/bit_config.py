@@ -25,13 +25,13 @@ bit_config_dict = {
         'stage2.unit1.quant_act_int32': 16,
 
         'stage2.unit2.quant_act': 6,
-        'stage2.unit2.quant_convbn1': 7,
+        'stage2.unit2.quant_convbn1': 8,
         'stage2.unit2.quant_act1': 6,
         'stage2.unit2.quant_convbn2': 8,
         'stage2.unit2.quant_act_int32': 16,
 
         'stage3.unit1.quant_act': 6,
-        'stage3.unit1.quant_convbn1': 8,
+        'stage3.unit1.quant_convbn1': 7,
         'stage3.unit1.quant_act1': 6,
         'stage3.unit1.quant_convbn2': 5,
         'stage3.unit1.quant_identity_convbn': 5,
@@ -85,13 +85,13 @@ bit_config_dict = {
         'stage2.unit1.quant_act_int32': 16,
 
         'stage2.unit2.quant_act': 8,
-        'stage2.unit2.quant_convbn1': 7,
+        'stage2.unit2.quant_convbn1': 8,
         'stage2.unit2.quant_act1': 8,
         'stage2.unit2.quant_convbn2': 8,
         'stage2.unit2.quant_act_int32': 16,
 
         'stage3.unit1.quant_act': 8,
-        'stage3.unit1.quant_convbn1': 8,
+        'stage3.unit1.quant_convbn1': 7,
         'stage3.unit1.quant_act1': 8,
         'stage3.unit1.quant_convbn2': 5,
         'stage3.unit1.quant_identity_convbn': 5,

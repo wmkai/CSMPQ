@@ -1,6 +1,7 @@
 import torch.nn as nn
 from models.base_models import *
 from collections import OrderedDict
+import pdb 
 
 def conv_bn(inp, oup, stride):
     return nn.Sequential(OrderedDict([('conv', nn.Conv2d(inp, oup, 3, stride, 1, bias=False)),
@@ -221,7 +222,7 @@ class MobileNetV2(MyNetwork):
         x = x.mean(3).mean(2)
         x = self.classifier(x)
         tensor.append(x)
-
+        # pdb.set_trace()
         return tensor
 
     @property
