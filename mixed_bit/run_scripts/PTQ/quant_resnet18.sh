@@ -4,6 +4,6 @@ python3 -m torch.distributed.launch --nproc_per_node=1 feature_extract_cdp.py \
  --path "Exp_base/resnet18_base" \
  --dataset "imagenet" \
  --save_path '/home/data/imagenet' \
- --beta 100 \
- --model_size 3.0 \
+ --beta 1.0 \
+ --model_size 5.5 \
  --quant_type "PTQ"
