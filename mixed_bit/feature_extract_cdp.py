@@ -114,7 +114,7 @@ if __name__ == '__main__':
     data = next(iter(data_loader))
     data = data[0]
     n = data.size()[0]
-
+    print(net)
     with torch.no_grad():
         feature = net.feature_extract(data, args.quant_type)
 
@@ -156,11 +156,13 @@ if __name__ == '__main__':
     gamma = np.array(tf_idf_map)
 
     if args.quant_type == 'QAT':
-        theta = copy.deepcopy(gamma)
-    elif args.quant_type == 'PTQ':
         # for i in range(len(gamma)):
         #     theta.append( 1 * math.exp(-1* args.beta *gamma[i]) )
         theta = copy.deepcopy(gamma)
+    elif args.quant_type == 'PTQ':
+        for i in range(len(gamma)):
+            theta.append( 1 * math.exp(-1* args.beta *gamma[i]) )
+        # theta = copy.deepcopy(gamma)
         theta = np.array(theta)
     # for x in gamma:
     #     print('%.4f '%x)
