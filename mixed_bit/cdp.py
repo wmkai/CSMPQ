@@ -113,7 +113,7 @@ def calc_tf_idf(feature:dict, coe:int, tf_idf_map:dict):   # feature = [c, n] ([
     feature_sum = feature.sum(dim=0) #([10000])，每个通道累加
     tf = (feature / feature_sum) * balance_coe #文中公式(8) ([64, 10000]) 
     tf_mean = (tf * ((feature) >= sample_mean)).sum(dim=1)   # Sa ([64])
-    tf_mean_new = tf_mean / (((feature) >= sample_mean).sum(dim=1) + 1e-6 ) # ([64])
+    tf_mean_new = tf_mean / (((feature) >= sample_mean).sum(dim=1) + 1e-11 ) # ([64])
     
     idf = torch.log(sample_quant / (sample_inverse + 1.0)) #文中公式(7) ([64])
     idf = idf.cuda() #新增，idf必须和tf_mean都在gpu上

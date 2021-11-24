@@ -5,5 +5,5 @@ python3 -m torch.distributed.launch --nproc_per_node=1 feature_extract_cdp.py \
  --dataset "imagenet" \
  --save_path '/home/data/imagenet/' \
  --beta 3.3 \
- --model_size 0.9 \
+ --model_size 1.5 \
  --quant_type "PTQ"
