@@ -20,7 +20,6 @@ pip install -r requirements.txt
 
 # Running
 
-To start running our code to get the optimal bit configuration, you need to download the [basemodel](https://drive.google.com/drive/folders/1q0wtmWNdqPZuZqnSCQLScYFNIYzXKebg?usp=sharing), and copy the path of base model to "--path". 
 
 
 
