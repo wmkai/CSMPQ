@@ -1,5 +1,10 @@
 # CSMPQ
-The official code of CSMPQ: Class Separability Based Mixed-Precision Quantization.
+<p>
+  <a href="https://img.shields.io/badge/Python-%3E%3D3.7-blue"><img src="https://img.shields.io/badge/Python-%3E%3D3.7-blue"></a>
+  <a href="https://img.shields.io/badge/PyTorch-1.9-informational"><img src="https://img.shields.io/badge/PyTorch-1.9-informational"></a>
+  <a href="https://img.shields.io/badge/License-MIT-brightgreen"><img src="https://img.shields.io/badge/License-MIT-brightgreen"></a>
+</p>
+The official implementation of CSMPQ: Class Separability Based Mixed-Precision Quantization.
 # Requirements
 
 * [DALI](https://github.com/NVIDIA/DALI) (for accelerating data processing)
