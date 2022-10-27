@@ -1,5 +1,5 @@
-# CDP_quant
-
+# CSMPQ
+The official code of CSMPQ: Class Separability Based Mixed-Precision Quantization.
 # Requirements
 
 * [DALI](https://github.com/NVIDIA/DALI) (for accelerating data processing)
