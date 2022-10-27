@@ -5,6 +5,7 @@
   <a href="https://img.shields.io/badge/License-MIT-brightgreen"><img src="https://img.shields.io/badge/License-MIT-brightgreen"></a>
 </p>
 The official implementation of CSMPQ: Class Separability Based Mixed-Precision Quantization.
+
 # Requirements
 
 * [DALI](https://github.com/NVIDIA/DALI) (for accelerating data processing)
