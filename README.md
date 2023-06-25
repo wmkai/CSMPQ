@@ -93,33 +93,6 @@ bash ./PTQ/run_scripts/train_resnet18.sh
 
 
 
-## Experimental Results
-
-
-<font size=4>**QAT**</font>
-
-| Model     | W/A     | Model Size(Mb) | BOPs(G) | Top-1(%) | Download                                                     |
-| --------- | ------- | -------------- | ------- | -------- | ------------------------------------------------------------ |
-| ResNet-18 | mixed/8 | 6.7            | 97      | 72.30    | [resnet18_6.7Mb_97BOPs](https://drive.google.com/drive/folders/1MmRyiYT6gULeAfS3eA_ksOFY9o_PZ6G5?usp=sharing) |
-| ResNet-18 | mixed/6 | 6.7            | 75      | 72.08    | [resnet18_6.7Mb_75BOPs](https://drive.google.com/drive/folders/19aUCE3BFtqdS81ziWnepIjXXYdEBCAxi?usp=sharing) |
-| ResNet-50 | mixed/5 | 16.0           | 141     | 76.20    | [resnet50_16.0Mb_141BOPs](https://drive.google.com/drive/folders/1ayexp_LXExiva4EdaQ13JTA7mJbxiYHD?usp=sharing) |
-| ResNet-50 | mixed/5 | 18.7           | 156     | 76.28    | [resnet50_18.7Mb_156BOPs](https://drive.google.com/drive/folders/1BPH_hlKTR-QJzwxbnLH06UgpthQBiOrN?usp=sharing) |
-
-<font size=4>**PTQ**</font>
-
-| Model       | W/A     | Model Size(Mb) | Top-1(%) |
-| ----------- | ------- | -------------- | -------- |
-| ResNet-18   | mixed/8 | 4.5            | 69.73    |
-| ResNet-18   | mixed/4 | 5.5            | 69.38    |
-| ResNet-18   | mixed/8 | 4.0            | 69.34    |
-| MobileNetV2 | mixed/8 | 1.3            | 69.51    |
-| MobileNetV2 | mixed/8 | 1.5            | 71.27    |
-
- 
-
-Mixed precision quantization comparisons with BRECQ on ResNet-18 and MobileNetV2 are as follows,
-
-
 ## Related Works
 
 - [BRECQ: Pushing the Limit of Post-Training Quantization by Block Reconstruction (ICLR 2021)](https://arxiv.org/abs/2102.05426)
